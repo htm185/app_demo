@@ -4,8 +4,8 @@ import re
 from typing import List, Dict
 
 
-GOOGLE_API_KEY = "AIzaSyAwK9KxnuI_H1KERGtNP7bd53KEfDR8Ppw"
-GOOGLE_CSE_ID = "609020a5a014a4b1e"
+GOOGLE_API_KEY = ""
+GOOGLE_CSE_ID = ""
 
 # Danh sách nguồn uy tín để cộng điểm tin cậy
 TRUSTED_SITES = [
