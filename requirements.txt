@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+streamlit
+torch
+transformers
+pydantic
+requests
+graphviz
