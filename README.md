@@ -43,7 +43,7 @@ Dự án xây dựng hệ thống **phát hiện/kiểm chứng thông tin sai l
 
 ---
 
-## 2) Yêu cầu hệ thống
+## 2.2) Yêu cầu hệ thống
 
 - Python **3.9+** (khuyến nghị)
 - (Tuỳ chọn) GPU/CUDA để tăng tốc PyTorch
