@@ -1,6 +1,6 @@
 # PHÁT HIỆN THÔNG TIN SAI LỆCH TRÊN MẠNG XÃ HỘI TIẾNG VIỆT BẰNG AI
 
-Dự án xây dựng hệ thống **phát hiện/kiểm chứng thông tin sai lệch** trên mạng xã hội tiếng Việt bằng AI theo hướng **đa tầng (adaptive)**, phân loại nội dung thành:
+Dự án xây dựng hệ thống **phát hiện/kiểm chứng thông tin sai lệch** trên mạng xã hội tiếng Việt bằng AI theo hướng **đa tầng (adaptive)**, phân loại nội d[...]
 
 - **REAL**: thông tin đáng tin cậy
 - **FAKE**: thông tin sai lệch
@@ -18,7 +18,7 @@ Dự án xây dựng hệ thống **phát hiện/kiểm chứng thông tin sai l
 2. UI gọi API `POST /verify`.
 3. Backend chạy `adaptive_predict()` trong `backend_logic.py`:
    - **Layer 1 (lọc nhanh)**: dựa trên **văn phong + metadata tương tác**. Nếu độ tin cậy cao (mặc định `>= 0.90`) thì trả kết quả ngay.
-   - **Layer 2 (đối chiếu bằng chứng)**: nếu Layer 1 chưa đủ tự tin → tìm bằng chứng từ web (Google CSE), cào nội dung trang, chạy NLI để đối chiếu “claim vs evidence”, sau đó tổng hợp kết quả.
+   - **Layer 2 (đối chiếu bằng chứng)**: nếu Layer 1 chưa đủ tự tin → tìm bằng chứng từ web (Google CSE), cào nội dung trang, chạy NLI để đối chiếu “claim [...]
 4. Backend **lưu kết quả** vào bảng `news_history` trong SQLite.
 
 ### 1.2 Các thành phần chính
@@ -29,6 +29,17 @@ Dự án xây dựng hệ thống **phát hiện/kiểm chứng thông tin sai l
 - `search_module.py`: tìm evidence qua Google Custom Search và chấm điểm kết quả.
 - `evidence_processor.py`: cào nội dung trang (Trafilatura), chọn đoạn liên quan, chạy NLI.
 - `database.py`: SQLAlchemy model `NewsRecord`.
+
+---
+
+## 2) Kết quả
+
+### 2.1 So sánh hiệu năng (Layer 2)
+
+<figure>
+  <img src="assets/layer2-comparison.png" alt="Bảng so sánh hiệu năng trên tập kiểm thử ViFactCheck (Layer 2)" width="900" />
+  <figcaption><i>Bảng 4-2: So sánh hiệu năng trên tập kiểm thử ViFactCheck (Layer 2).</i></figcaption>
+</figure>
 
 ---
 
